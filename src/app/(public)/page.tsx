@@ -7,16 +7,17 @@ type SearchParams = {
 }
 
 export default async function PostsPage(
-  {searchParams}: {searchParams: SearchParams}) {
+  {searchParams}:{searchParams: Promise<SearchParams>}) {
 
-    const resolvedSearchParams = await Promise.resolve(searchParams)
-    const query = resolvedSearchParams.search
+  const resolvedSearchParams = await searchParams
+  const query = resolvedSearchParams.search || ''
 
-    const posts = query 
-    ? await searchPosts(query) 
-    : await getPosts()
+  const posts = query 
+  ? await searchPosts(query) as Post[]
+  : await getPosts() as Post[]
 
-    // const posts = await getPosts() as Post[]
+  // const posts = await getPosts() as Post[]
+
   return (
     <>
     <div className="container mx-auto px-4 py-8">
