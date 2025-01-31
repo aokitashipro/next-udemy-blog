@@ -31,7 +31,7 @@ export async function saveImageToLocal(file: File): Promise<string | null>{
 
 async function saveImageToSupabase(file: File): Promise<string | null> {
     const fileName = `${Date.now()}_${file.name}`;
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
         .from('udemy_next_blog_bucket')
         .upload(fileName, file, {
             cacheControl: '3600',
