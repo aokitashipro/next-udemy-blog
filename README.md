@@ -12,6 +12,7 @@ cd next-udemy-blog
 講座内のprismaの箇所をご確認ください。
 
 DATABASE_URL=
+
 AUTH_SECRET=
 
 npm install  // 必要なライブラリをインストール
