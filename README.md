@@ -17,9 +17,18 @@ AUTH_SECRET=
 NEXT_PUBLIC_USE_SUPABASE_STORAGE=false  # ローカルでは false
 ```
 
+## インストール・ビルド関連
+
 npm install  // 必要なライブラリをインストール
 
 npm run dev // 開発サーバー起動
 
 npm run build // ビルド
+
+## DBマイグレーション関連
+
+npx prisma migrate dev --name init // マイグレーション・テーブル作成
+
+npx prisma db seed // シード実行(ダミーデータ)
+
 
