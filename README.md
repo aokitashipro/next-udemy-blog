@@ -31,4 +31,7 @@ npx prisma migrate dev --name init // マイグレーション・テーブル作
 
 npx prisma db seed // シード実行(ダミーデータ)
 
+## 認証
+
+npx auth secret // シークレットキー作成 .env.localに生成されるので.envに統合する
 
